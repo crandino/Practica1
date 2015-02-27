@@ -1,0 +1,60 @@
+﻿Pràctica 1, assignatura Programació 2
+
+Avaluació
+-Puntua un 20% de la nota total
+-El dia i hora últim d’entrega es dimarts 3 de Març a les 12:00
+-L’entrega és un fitxer de text a l’aula d’entrega de l’assignatura. El nom del fitxer ha de ser el
+vostre nom_cognom.txt . Dintre d’aquest fitxer de text ha d’estar l’enllaç al repositori de git on es
+troba el codi. Exemple:
+ * Ricard_Pillosu.txt:
+ * “ https://github.com/Cyberdwarf/TextAdventure ”
+-La pràctica és individual
+
+Contingut
+
+-Fitxer d’estil de codi
+-Solució de Visual Studio 2013 amb 2 projectes, un amb les dos classes i altre amb el unit test
+-Unit Test amb cada mètode de les classes amb el seu test
+-Classe punt 2D (2 float) amb els següents mètodes:
+	* operador ○
+	* operador +
+	* operador +=
+	* operador =
+	* operador ==
+	* operador !=
+	* “IsZero()” consulta si el punt esta a 0,0
+	* “SetZero()” posa el punt a 0,0
+	* “DistanceTo(punt2d p)” torna la distancia exacte fins p
+-Classe cadena amb els següents mètodes:
+	* Constructor vuit HECHO
+	* Constructor des de cadena de c amb format HECHO
+	* Constructor des de un altre classe cadena (constructor de còpia) HECHO
+	* Destructor HECHO
+	* operador == contra cadena c HECHO
+	* operador != contra cadena c HECHO
+	* operador == contra altre classe cadena HECHO
+	* operador != contra altre classe cadena HECHO
+	* operador = contra cadena c HECHO
+	* operador = contra altre classe cadena HECHO
+	* operador += contra cadena c 
+	* operador += contra altre classe cadena
+	* “Length()” torna el tamany de la cadena HECHO
+	* “Capacity()” torna la quantitat de memòria reservada HECHO
+	* “GetString()” torna la cadena de c per consultar HECHO
+	* “Clear()” deixa la cadena buida (“”) HECHO
+
+Criteris de correcció
+- Classe punt 2d (30% de la nota):
+	* Estil de codi coherent 15%
+	* Codi constcorrect 15%
+	* Codi fàcil de llegir 30%
+	* Funcionalitat del codi 40%
+- Classe cadena (70% de la nota):
+	* Estil de codi coherent 15%
+	* Codi constcorrect 15%
+	* Codi fàcil de llegir 30%
+	* Funcionalitat del codi 40%
+- No es corregira el codi si:
+	* No es troba al git
+	* No compila
+	* Cada mètode no té un unit test associat
