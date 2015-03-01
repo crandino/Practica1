@@ -1,4 +1,5 @@
-#include "Point2d.h"
+#include <math.h>
+#include "point2d.h"
 
 Point2d Point2d::operator+ (const Point2d &p) const
 {
@@ -28,4 +29,29 @@ const Point2d& Point2d::operator-= (const Point2d &p)
 	x -= p.x;
 	y -= p.y;
 	return (*this);
+}
+
+bool Point2d::operator== (const Point2d &p) const
+{
+	return (x == p.x && y == p.y);
+}
+
+bool Point2d::operator!= (const Point2d &p) const
+{
+	return (x != p.x || y != p.y);
+}
+
+bool Point2d::isBothZero() const
+{
+	return (x == 0 && y == 0);
+}
+
+void Point2d::setZero()
+{
+	x = y = 0;
+}
+
+float Point2d::distanceTo(const Point2d &p) const
+{
+	return sqrt(pow(x - p.x, 2) + pow(y - p.y, 2));
 }

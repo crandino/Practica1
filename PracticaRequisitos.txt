@@ -16,10 +16,10 @@ Contingut
 -Solució de Visual Studio 2013 amb 2 projectes, un amb les dos classes i altre amb el unit test
 -Unit Test amb cada mètode de les classes amb el seu test
 -Classe punt 2D (2 float) amb els següents mètodes:
-	* operador ○
+	* operador -
 	* operador +
 	* operador +=
-	* operador =
+	* operador -=
 	* operador ==
 	* operador !=
 	* “IsZero()” consulta si el punt esta a 0,0
@@ -58,3 +58,7 @@ Criteris de correcció
 	* No es troba al git
 	* No compila
 	* Cada mètode no té un unit test associat
+
+Preguntar a Ricard:
+Tema UnitTest en cada método. Se consideran métodos los constructores, destructores y operadores?
+Operador += en Strings.

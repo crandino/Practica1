@@ -65,14 +65,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Point2d.cpp" />
+    <ClCompile Include="point2d.cpp" />
+    <ClCompile Include="string.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="codeStyle.txt" />
-    <Text Include="PracticaRequisitos.txt" />
+    <Text Include="practicaRequisitos.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Point2d.h" />
+    <ClInclude Include="point2d.h" />
+    <ClInclude Include="string.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

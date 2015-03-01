@@ -18,7 +18,10 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Point2d.cpp">
+    <ClCompile Include="string.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="point2d.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -26,12 +29,15 @@
     <Text Include="codeStyle.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="PracticaRequisitos.txt">
+    <Text Include="practicaRequisitos.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Point2d.h">
+    <ClInclude Include="string.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="point2d.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
