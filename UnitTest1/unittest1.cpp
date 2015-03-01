@@ -110,15 +110,21 @@ namespace UnitTest1
 		// Tests for String Class
 		// ----------------------------
 
-		TEST_METHOD(string)
+		TEST_METHOD(stringEquality)
 		{
-			Point2d p1, p2, p3;
-			p1.x = p2.x = 1.f;
-			p1.y = p2.y = 2.f;
+			String s1("Hello");
+			String s2 = s1;
 
-			p3 = p1 + p2;
+			Assert::IsTrue(s1 == s2);
+			Assert::IsFalse(s1 != s2);
+		}
+		TEST_METHOD(stringInequality)
+		{
+			String s1("Hello");
+			String s2("%s, %s", "Hello", "darling...");
 
-			Assert::IsTrue(p3.x == 2.f && p3.y == 4.f);
+			Assert::IsTrue(s1 != s2);
+			Assert::IsFalse(s1 == s2);
 		}
 	};
 }

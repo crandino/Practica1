@@ -7,13 +7,13 @@ private:
 	char *str;
     unsigned int size;
 
-	void Alloc(int required_memory);
+	void alloc(int required_memory);
 
 public:
 
 	String();
 	String(const char* format, ...);
-	String(const char* _str);
+	//String(const char* _str);
 	String(const String &_str);
 	~String();
 

@@ -1,7 +1,12 @@
-#include "string.h"
-#include <iostream>
+#include <stdio.h>
+#include <stdarg.h>
+#include <wtypes.h>
 
-void String::Alloc(int required_memory) {
+#include "string.h"
+
+#define TMP_STRING_SIZE 4096
+
+void String::alloc(int required_memory) {
 	size = required_memory;
 	str = new char[size];
 }
@@ -13,14 +18,36 @@ String::String()
 	str[0] = '\0';
 }
 
-
-
-String::String(const char *_str)
+String::String(const char* format, ...)
 {
-	size = strlen(_str) + 1;
-	str = new char[size];
-	strcpy_s(str, size, _str);
+	size = 0;
+	if (format != NULL)
+	{
+		static char tmp[TMP_STRING_SIZE];
+		static va_list ap;
+		// Construct the string from variable arguments
+		va_start(ap, format);
+		int res = vsprintf_s(tmp, TMP_STRING_SIZE, format, ap);
+		va_end(ap);
+		if (res > 0)
+		{
+			alloc(res + 1);
+			strcpy_s(str, size, tmp);
+		}
+	}
+	if (size == 0)
+	{
+		alloc(1);
+		clear();
+	}
 }
+
+//String::String(const char *_str)
+//{
+//	size = strlen(_str) + 1;
+//	str = new char[size];
+//	strcpy_s(str, size, _str);
+//}
 
 String::String(const String &_str)
 {
@@ -62,7 +89,7 @@ const String& String::operator= (const String &_str)
 	if (_str.size > size)
 	{
 		delete[] str;
-		Alloc(size);
+		alloc(size);
 	}
 
 	strcpy_s(str, size, _str.str);
@@ -76,7 +103,7 @@ const String& String::operator= (const char *_str)
 		if (strlen(_str) + 1 > size)
 		{
 			delete[] str;
-			Alloc(strlen(_str) + 1);
+			alloc(strlen(_str) + 1);
 		}
 
 		strcpy_s(str, size, _str);
