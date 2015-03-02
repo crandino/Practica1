@@ -119,6 +119,9 @@ const String& String::operator+= (const String &_str)
 	unsigned int size_tmp = size;
 	size = _str.size + size_tmp;
 	
+	/* The pointer str_tmp points to the same address that 
+	str, so we can not eliminate it until we have concatenated
+	the two strings because the corresponding value disappears.*/
 	char *tmp;
 	tmp = new char[size];
 	strcpy_s(tmp, size, str_tmp);

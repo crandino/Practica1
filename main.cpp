@@ -1,9 +1,6 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "Point2d.h"
 #include "String.h"
-#include <iostream>
-#include <cctype>
 
 int main(int argc, char* argv[])
 {
