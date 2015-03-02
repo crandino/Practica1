@@ -109,22 +109,143 @@ namespace UnitTest1
 		// ----------------------------
 		// Tests for String Class
 		// ----------------------------
+		
+		TEST_METHOD(stringConstrEmpty)
+		{
+			String s1;
 
-		TEST_METHOD(stringEquality)
+			Assert::IsTrue(s1 == "");
+		}
+		TEST_METHOD(stringConstrChar)
+		{
+			String s1("Hello");
+			char *p2 = "Dog";
+			String s2 = p2;
+			char *p3 = NULL;
+			String s3 = p3;
+			String s4("%s %d %s", "I am", 27, "years old");
+
+			Assert::IsTrue(s1 == "Hello");
+			Assert::IsTrue(s2 == "Dog");
+			Assert::IsTrue(s3 == "");
+			Assert::IsTrue(s4 == "I am 27 years old");
+		}
+		TEST_METHOD(stringConstrString)
+		{
+			String s1;
+			String s2(s1);
+			String s3("Hello");
+			String s4(s3);
+
+			Assert::IsTrue(s1 == "");
+			Assert::IsTrue(s1 == s2);
+			Assert::IsTrue(s3 == "Hello");
+			Assert::IsTrue(s3 == s4);
+		}
+		TEST_METHOD(stringEqualityChar)
+		{
+			String s1("Hello");
+			char *p1 = NULL;
+			char *p2 = "Hello";
+
+			Assert::IsTrue(s1 == "Hello");
+			Assert::IsFalse(s1 == p1);
+			Assert::IsTrue(s1 == p2);
+		}
+		TEST_METHOD(stringInequalityChar)
+		{
+			String s1("Hello");
+			char *p1 = NULL;
+			char *p2 = "Hello, darling";
+
+			Assert::IsTrue(s1 != "Hello, darling");
+			Assert::IsTrue(s1 != p1);
+			Assert::IsTrue(s1 != p2);
+		}
+		TEST_METHOD(stringEqualityString)
+		{
+			String s1("Hello");
+			String s2("Hello");
+
+			Assert::IsTrue(s1 == s2);
+		}
+		TEST_METHOD(stringInequalityString)
+		{
+			String s1("Hello");
+			String s2("Hello, darling...");
+
+			Assert::IsTrue(s1 != s2);
+		}
+		TEST_METHOD(stringAssignChar)
+		{
+			String s1("Hello");
+			String s2 = "Hello, darling...";
+			char *p = NULL;
+			String s3 = p;
+			String s4 = "Hello";
+
+			Assert::IsTrue(s1 != s2);
+			Assert::IsTrue(s1 != s2);
+			Assert::IsTrue(s1 != s3);
+			Assert::IsTrue(s1 == s4);
+		}
+		TEST_METHOD(stringAssignString)
 		{
 			String s1("Hello");
 			String s2 = s1;
+			String s3("Hello, darling...");
+			String s4 = s3;
 
 			Assert::IsTrue(s1 == s2);
-			Assert::IsFalse(s1 != s2);
+			Assert::IsTrue(s1 != s4);
 		}
-		TEST_METHOD(stringInequality)
+		TEST_METHOD(stringConcatChar)
 		{
 			String s1("Hello");
-			String s2("%s, %s", "Hello", "darling...");
-
-			Assert::IsTrue(s1 != s2);
-			Assert::IsFalse(s1 == s2);
+			s1 += "world";
+			Assert::IsTrue(s1 == "Helloworld");
+			char *p = NULL;
+			s1 += p;
+			Assert::IsTrue(s1 == "");
 		}
+		TEST_METHOD(stringConcatString)
+		{
+			String s1("Hello");
+			String s2("world");
+			s1 += s2;
+			Assert::IsTrue(s1 == "Helloworld");
+		}
+		TEST_METHOD(stringGetLength)
+		{
+			String s1("Hello");
+			String s2;
+
+			Assert::IsTrue(s1.getLength() == 5);
+			Assert::IsTrue(s2.getLength() == 0);
+		}
+		TEST_METHOD(stringCapacity)
+		{
+			String s1("Hello");
+			String s2;
+
+			Assert::IsTrue(s1.capacity() == 6);
+			Assert::IsTrue(s2.capacity() == 1);
+		}
+		TEST_METHOD(stringGetString)
+		{
+			String s1("Hello");
+			String s2;
+
+			Assert::IsTrue(strcmp(s1.getString(),"Hello") == 0);
+			Assert::IsTrue(strcmp(s2.getString(),"") == 0);
+		}
+		TEST_METHOD(stringClear)
+		{
+			String s1("Hello");
+			s1.clear();
+
+			Assert::IsTrue(strcmp(s1.getString(), "") == 0);
+		}
+		
 	};
 }

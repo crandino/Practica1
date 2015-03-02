@@ -62,3 +62,4 @@ Criteris de correcció
 Preguntar a Ricard:
 Tema UnitTest en cada método. Se consideran métodos los constructores, destructores y operadores?
 Operador += en Strings.
+Utilizar operadores propios en el UnitTest

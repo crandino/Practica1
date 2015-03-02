@@ -13,8 +13,7 @@ void String::alloc(int required_memory) {
 
 String::String()
 {
-	size = 1;
-	str = new char[size];
+	alloc(1);
 	str[0] = '\0';
 }
 
@@ -81,7 +80,7 @@ bool String::operator!= (const char *_str) const
 {
 	if (_str != NULL)
 		return strcmp(str, _str) != 0;
-	return false;
+	return true;
 }
 
 const String& String::operator= (const String &_str)
