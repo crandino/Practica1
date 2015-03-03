@@ -161,7 +161,7 @@ const String& String::operator+= (const char *_str)
 
 unsigned int String::getLength() const
 {
-	return size - 1;
+	return strlen(str);
 }
 
 char* String::getString() const
